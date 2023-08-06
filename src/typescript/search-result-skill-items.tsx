@@ -66,333 +66,333 @@ import pickPocketImage from "../images/skills/Pick Pocket.png";
 import seaVechicleTechImage from "../images/skills/Sea Vehicle Tech.png";
 import weaponstechImage from "../images/skills/Weaponstech.png";
 
-export default function GetSearchResultSkillItem(item: string) {
-    if (item === "Concentration") {
+export default function GetSearchResultSkillitemID(itemID: number) {
+    if (itemID === 1) {
         return (
             <img src={ concentrationImage } alt="concentration" />
         )
     }
-    if (item === "Conceal/Reveal Object") {
+    if (itemID === 2) {
         return (
             <img src={ concealRevealObjectImage } alt="conceal/reveal object" />
         )
     }
-    if (item === "Lip Reading") {
+    if (itemID === 3) {
         return (
             <img src={ lipReadingImage } alt="lip reading" />
         )
     }
-    if (item === "Perception") {
+    if (itemID === 4) {
         return (
             <img src={ perceptionImage } alt="perception" />
         )
     }
-    if (item === "Tracking") {
+    if (itemID === 5) {
         return (
             <img src={ trackingImage } alt="tracking" />
         )
     }
-    if (item === "Athletics") {
+    if (itemID === 6) {
         return (
             <img src={ athleticsImage } alt="athletics" />
         )
     }
-    if (item === "Contortionist") {
+    if (itemID === 7) {
         return (
             <img src={ contortionistImage } alt="contortionist" />
         )
     }
-    if (item === "Dance") {
+    if (itemID === 8) {
         return (
             <img src={ danceImage } alt="dance" />
         )
     }
-    if (item === "Endurance") {
+    if (itemID === 9) {
         return (
             <img src={ enduranceImage } alt="endurance" />
         )
     }
-    if (item === "Resist Torture/Drugs") {
+    if (itemID === 10) {
         return (
             <img src={ resistTortureDrugsImage } alt="resist torture/drugs" />
         )
     }
-    if (item === "Stealth") {
+    if (itemID === 11) {
         return (
             <img src={ stealthImage } alt="stealth" />
         )
     }
-    if (item === "Drive Land Vehicle") {
+    if (itemID === 12) {
         return (
             <img src={ driveLandVehiclesImage } alt="drive land vehicle" />
         )
     }
-    if (item === "Pilot Air Vehicle (x2)") {
+    if (itemID === 13) {
         return (
             <img src={ pilotAirVehicleImage } alt="pilot air vehicle" />
         )
     }
-    if (item === "Pilot Sea Vehicle") {
+    if (itemID === 14) {
         return (
             <img src={ pilotSeaVehicleImage } alt="pilot sea vehicle" />
         )
     }
-    if (item === "Riding") {
+    if (itemID === 15) {
         return (
             <img src={ ridingImage } alt="riding" />
         )
     }
-    if (item === "Accounting") {
+    if (itemID === 16) {
         return (
             <img src={ accountingImage } alt="accounting" />
         )
     }
-    if (item === "Animal Handling") {
+    if (itemID === 17) {
         return (
             <img src={ animalHandlingImage } alt="animal handling" />
         )
     }
-    if (item === "Bureaucracy") {
+    if (itemID === 18) {
         return (
             <img src={ bureaucracyImage } alt="bureaucracy" />
         )
     }
-    if (item === "Business") {
+    if (itemID === 19) {
         return (
             <img src={ businessImage } alt="business" />
         )
     }
-    if (item === "Composition") {
+    if (itemID === 20) {
         return (
             <img src={ compositionImage } alt="composition" />
         )
     }
-    if (item === "Criminology") {
+    if (itemID === 21) {
         return (
             <img src={ criminologyImage } alt="criminology" />
         )
     }
-    if (item === "Cryptography") {
+    if (itemID === 22) {
         return (
             <img src={ cryptographyImage } alt="cryptography" />
         )
     }
-    if (item === "Deduction") {
+    if (itemID === 23) {
         return (
             <img src={ deductionImage } alt="deduction" />
         )
     }
-    if (item === "Education") {
+    if (itemID === 24) {
         return (
             <img src={ eductionImage } alt="education" />
         )
     }
-    if (item === "Gamble") {
+    if (itemID === 25) {
         return (
             <img src={ gambleImage } alt="gamble" />
         )
     }
-    if (item === "Language") {
+    if (itemID === 26) {
         return (
             <img src={ languageImage } alt="language" />
         )
     }
-    if (item === "Library Search") {
+    if (itemID === 27) {
         return (
             <img src={ librarySearchImage } alt="library search" />
         )
     }
-    if (item === "Local Expert") {
+    if (itemID === 28) {
         return (
             <img src={ localExpertImage } alt="local expert" />
         )
     }
-    if (item === "Science") {
+    if (itemID === 29) {
         return (
             <img src={ scienceImage } alt="science" />
         )
     }
-    if (item === "Tactics") {
+    if (itemID === 30) {
         return (
             <img src={ tacticsImage } alt="tactics" />
         )
     }
-    if (item === "Wilderness Survival") {
+    if (itemID === 31) {
         return (
             <img src={ wildernessSurvivalImage } alt="wilderness survival" />
         )
     }
-    if (item === "Brawling") {
+    if (itemID === 32) {
         return (
             <img src={ brawlingImage } alt="brawling" />
         )
     }
-    if (item === "Evasion") {
+    if (itemID === 33) {
         return (
             <img src={ evasionImage } alt="evasion" />
         )
     }
-    if (item === "Martial Arts (x2)") {
+    if (itemID === 34) {
         return (
             <img src={ martialArtsImage } alt="martial arts" />
         )
     }
-    if (item === "Melee Weapon") {
+    if (itemID === 35) {
         return (
             <img src={ meleeWeaponImage } alt="melee weapon" />
         )
     }
-    if (item === "Acting") {
+    if (itemID === 36) {
         return (
             <img src={ actingImage } alt="acting" />
         )
     }
-    if (item === "Play Instrument") {
+    if (itemID === 37) {
         return (
             <img src={ playInstrumentImage } alt="play instrument" />
         )
     }
-    if (item === "Archery") {
+    if (itemID === 38) {
         return (
             <img src={ archeryImage } alt="archery" />
         )
     }
-    if (item === "Autofire (x2)") {
+    if (itemID === 39) {
         return (
             <img src={ autofireImage } alt="autofire" />
         )
     }
-    if (item === "Handgun") {
+    if (itemID === 40) {
         return (
             <img src={ handgunImage } alt="handgun" />
         )
     }
-    if (item === "Heavy Weapons (x2)") {
+    if (itemID === 41) {
         return (
             <img src={ heavyWeaponsImage } alt="heavy weapons" />
         )
     }
-    if (item === "Shoulder Arms") {
+    if (itemID === 42) {
         return (
             <img src={ shoulderArmsImage } alt="shoulder arms" />
         )
     }
-    if (item === "Bribery") {
+    if (itemID === 43) {
         return (
             <img src={ briberyImage } alt="bribery" />
         )
     }
-    if (item === "Conversation") {
+    if (itemID === 44) {
         return (
             <img src={ conversationImage } alt="conversation" />
         )
     }
-    if (item === "Human Perception") {
+    if (itemID === 45) {
         return (
             <img src={ humanPerceptionImage } alt="human perception" />
         )
     }
-    if (item === "Interrogation") {
+    if (itemID === 46) {
         return (
             <img src={ interrogationImage } alt="interrogation" />
         )
     }
-    if (item === "Persuasion") {
+    if (itemID === 47) {
         return (
             <img src={ persuasionImage } alt="persuasion" />
         )
     }
-    if (item === "Personal Grooming") {
+    if (itemID === 48) {
         return (
             <img src={ personalGroomingImage } alt="personal grooming" />
         )
     }
-    if (item === "Streetwise") {
+    if (itemID === 49) {
         return (
             <img src={ streetwiseImage } alt="streetwise" />
         )
     }
-    if (item === "Trading") {
+    if (itemID === 50) {
         return (
             <img src={ tradingImage } alt="trading" />
         )
     }
-    if (item === "Wardrobe and Style") {
+    if (itemID === 51) {
         return (
             <img src={ wardrobeAndStyleImage } alt="wardrobe and style" />
         )
     }
-    if (item === "Air Vehicle Tech") {
+    if (itemID === 52) {
         return (
             <img src={ airVehicleTechImage } alt="air vehicle" />
         )
     }
-    if (item === "Basic Tech") {
+    if (itemID === 53) {
         return (
             <img src={ basicTechImage } alt="basic tech" />
         )
     }
-    if (item === "Cybertech") {
+    if (itemID === 54) {
         return (
             <img src={ cybertechImage } alt="cybertech" />
         )
     }
-    if (item === "Demolitions (x2)") {
+    if (itemID === 55) {
         return (
             <img src={ demolitionsImage } alt="demolitions" />
         )
     }
-    if (item === "Electronics/Security Tech (x2)") {
+    if (itemID === 56) {
         return (
             <img src={ electronicsSecurityTechImage } alt="electronics security tech" />
         )
     }
-    if (item === "First Aid") {
+    if (itemID === 57) {
         return (
             <img src={ firstAidImage } alt="first aid" />
         )
     }
-    if (item === "Forgery") {
+    if (itemID === 58) {
         return (
             <img src={ forgeryImage } alt="forgery" />
         )
     }
-    if (item === "Land Vehicle Tech") {
+    if (itemID === 59) {
         return (
             <img src={ landVehicleTechImage } alt="land vehicle tech" />
         )
     }
-    if (item === "Paint/Draw/Sculpt") {
+    if (itemID === 60) {
         return (
             <img src={ paintDrawSculptImage } alt="paint/draw/sculpt" />
         )
     }
-    if (item === "Paramedic (x2)") {
+    if (itemID === 61) {
         return (
             <img src={ paramedicImage } alt="paramedic" />
         )
     }
-    if (item === "Photography/Film") {
+    if (itemID === 62) {
         return (
             <img src={ photographyFilmImage } alt="photography/film" />
         )
     }
-    if (item === "Pick Lock") {
+    if (itemID === 63) {
         return (
             <img src={ pickLockImage } alt="pick lock" />
         )
     }
-    if (item === "Pick Pocket") {
+    if (itemID === 64) {
         return (
             <img src={ pickPocketImage } alt="pick pocket" />
         )
     }
-    if (item === "Sea Vehicle Tech") {
+    if (itemID === 65) {
         return (
             <img src={ seaVechicleTechImage } alt="sea vehicle" />
         )
     }
-    if (item === "Weaponstech") {
+    if (itemID === 66) {
         return (
             <img src={ weaponstechImage } alt="weapons tech" />
         )

@@ -4,6 +4,7 @@ const SearchResultsStyles = styled.div`
     display: flex;
     flex-direction: column;
     gap: 50px;
+    align-items: center;
 
     .search-result-container {
         max-width: 1200px;

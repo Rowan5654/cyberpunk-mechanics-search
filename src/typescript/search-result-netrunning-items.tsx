@@ -1,8 +1,8 @@
 // CSS
 import SearchResultNetrunningItemsStyles from "../css/search-result-netrunning-items.styles"
 
-export default function GetSearchResultNetrunningItem(item: string) {
-    if (item === "Encountering Black ICE") {
+export default function GetSearchResultNetrunningItem(itemID: number) {
+    if (itemID === 67) {
         return (
             <SearchResultNetrunningItemsStyles>
                 <b>When a <span className="black-ice special-text">Black ICE</span> is encountered, the following rolls are made:</b>
@@ -65,7 +65,7 @@ export default function GetSearchResultNetrunningItem(item: string) {
     }
 
 
-    if (item === "Netrunning Combat" || "NET Combat") {
+    if (itemID === 68) {
         return (
             <SearchResultNetrunningItemsStyles>
                 <b>NET Combat</b>
@@ -174,7 +174,7 @@ export default function GetSearchResultNetrunningItem(item: string) {
 
 function ToggleDropdown(caret: HTMLElement, dropdownContent: HTMLElement) {
     // Show dropdown content
-    if (dropdownContent.style.display == "flex") {
+    if (dropdownContent.style.display === "flex") {
         dropdownContent.style.display = "none";
         caret.style.transform = "rotate(180deg)";
     }
