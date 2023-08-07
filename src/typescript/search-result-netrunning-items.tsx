@@ -1,10 +1,10 @@
 // CSS
-import SearchResultNetrunningItemsStyles from "../css/search-result-netrunning-items.styles"
+import SearchResultCustomItemStyles from "../css/search-result-custom-item.styles"
 
-export default function GetSearchResultNetrunningItem(itemID: number) {
+export default function GetSearchResultNetrunningItem(itemID: number, updateSearch: (newSearch: string) => void) {
     if (itemID === 67) {
         return (
-            <SearchResultNetrunningItemsStyles>
+            <SearchResultCustomItemStyles>
                 <b>When a <span className="black-ice special-text">Black ICE</span> is encountered, the following rolls are made:</b>
                 <div className="roll-information-container">
                     <div className="roll-information-content">
@@ -58,16 +58,16 @@ export default function GetSearchResultNetrunningItem(itemID: number) {
 
                 <p>The <span className="black-ice special-text">Black ICE</span> will attach itself onto the <span className="netrunner special-text">Netrunner</span> and follow them throughout the Architecture. At the beginning of each turn, <span className="black-ice special-text">Anti-Personnel Black ICE</span> will attack the <span className="netrunner special-text">Netrunner</span>, and <span className="black-ice special-text">Anti-Program Black ICE</span> will attack one of the <span className="netrunner special-text">Netrunner</span>'s programs at random.</p>
 
-                <p>The only way to get rid of a <span className="black-ice special-text">Black ICE</span> is to either Derezz it (Remove all it's HP), or make a successful <button className="change-search-button" onClick={ () => { (document.getElementById("search-input") as HTMLInputElement)!.value = "Slide" }}>Slide</button> against it.</p>
+                <p>The only way to get rid of a <span className="black-ice special-text">Black ICE</span> is to either Derezz it (Remove all it's HP), or make a successful <button className="change-search-button" onClick={ () => { updateSearch("Slide") }}>Slide</button> against it.</p>
 
-            </ SearchResultNetrunningItemsStyles>
+            </ SearchResultCustomItemStyles>
         )
     }
 
 
     if (itemID === 68) {
         return (
-            <SearchResultNetrunningItemsStyles>
+            <SearchResultCustomItemStyles>
                 <b>NET Combat</b>
                 <div className="roll-information-content-dropdown">
                     <div className="roll-information-content-dropdown-title" onClick={ () => { ToggleDropdown(document.getElementById("net-combat-dropdown-1-caret")!, document.getElementById("net-combat-dropdown-1")!) } }>
@@ -167,7 +167,7 @@ export default function GetSearchResultNetrunningItem(itemID: number) {
                     <li>If the <span className="defender special-text">DEFENDER</span> is a <span className="black-ice special-text">Program</span>, it will reduce it's REZ based on the damage done.</li>
                 </ul>
                 <p style={{ textAlign: "center" }}>A <span className="defender special-text">DEFENDING</span> <span className="black-ice special-text">Program</span> is Derezzed when it's REZ reaches 0. In order to use the program again, it will need to be deactivated and reactivated (2 seperate NET Actions). If a <span className="black-ice special-text">Program</span> is destroyed (part of some <span className="black-ice special-text">Programs</span> effect), a completely new <span className="black-ice special-text">Program</span> will need to be purchased to replace it.</p>
-            </SearchResultNetrunningItemsStyles>
+            </SearchResultCustomItemStyles>
         )
     }
 }

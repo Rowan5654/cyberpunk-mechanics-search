@@ -4,6 +4,7 @@ import SearchResultsStyles from "../css/search-results.styles";
 // Functions
 import GetSearchResultSkillItem from "../typescript/search-result-skill-items";
 import GetSearchResultNetrunningItem from "../typescript/search-result-netrunning-items";
+import GetSearchResultCombatItem from "../typescript/search-result-combat-items";
 
 type SearchResultItem = {
     itemID: number,
@@ -16,14 +17,16 @@ type SearchItem = {
 }
 
 type SearchResultsParams = {
-    search: string;
+    search: string,
+    updateSearch: (newSearch: string) => void
 }
 
 export default function SearchResults(props: SearchResultsParams) {
-    const [searchResults, setSearchResults] = React.useState<SearchResultItem[]>(GenerateSearchResults(""));
+    const [searchResults, setSearchResults] = React.useState<SearchResultItem[]>(GenerateSearchResults("", props.updateSearch));
 
     React.useEffect(() => {
-        setSearchResults(GenerateSearchResults(props.search));
+        console.log("here");
+        setSearchResults(GenerateSearchResults(props.search, props.updateSearch));
     }, [props.search])
 
     return (
@@ -37,14 +40,14 @@ export default function SearchResults(props: SearchResultsParams) {
     )
 }
 
-function GenerateSearchResults(userSearch: string): SearchResultItem[] {
+function GenerateSearchResults(userSearch: string, updateSearch: (newSearch: string) => void): SearchResultItem[] {
     const searchItems: SearchItem[] = GetAllSearchItems();
     const searchResults: SearchResultItem[] = [];
 
 
 
     //Used for testing
-    // userSearch = "Net";
+    // userSearch = "Ranged Combat";
 
 
 
@@ -56,7 +59,10 @@ function GenerateSearchResults(userSearch: string): SearchResultItem[] {
                 content = GetSearchResultSkillItem(searchItems[x].itemID);
             }
             if (IsSearchItemInList(GetNetrunningSearchItems(), searchItems[x])) {
-                content = GetSearchResultNetrunningItem(searchItems[x].itemID);
+                content = GetSearchResultNetrunningItem(searchItems[x].itemID, updateSearch);
+            }
+            if (IsSearchItemInList(GetCombatSearchItems(), searchItems[x])) {
+                content = GetSearchResultCombatItem(searchItems[x].itemID, updateSearch);
             }
             
             if (!IsSearchItemInResults(searchResults, searchItems[x].itemID)) {
@@ -92,11 +98,18 @@ function IsSearchItemInResults(list: SearchResultItem[], ID: number) {
 }
 
 function GetAllSearchItems(): SearchItem[] {
-    const skillsSearchItems = GetSkillsSearchItems();
-    const netrunningSearchItems = GetNetrunningSearchItems();
+    const skillsSearchItems: SearchItem[] = GetSkillsSearchItems();
+    const netrunningSearchItems: SearchItem[] = GetNetrunningSearchItems();
+    const combatSearchItems: SearchItem[] = GetCombatSearchItems();
 
-    return skillsSearchItems.concat(netrunningSearchItems);
+    return skillsSearchItems.concat(netrunningSearchItems, combatSearchItems);
 };
+
+function GetCombatSearchItems(): SearchItem[] {
+    return [
+        { itemID: 69, searchPhrase: "Ranged Combat" }
+    ]
+}
 
 function GetNetrunningSearchItems(): SearchItem[] {
     return [

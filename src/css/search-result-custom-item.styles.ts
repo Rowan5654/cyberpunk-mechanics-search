@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const SearchResultNetrunningItemsStyles = styled.div`
+const SearchResultCustomItemStyles = styled.div`
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -13,6 +13,8 @@ const SearchResultNetrunningItemsStyles = styled.div`
     .roll-information-container {
         display: flex;
         justify-content: space-between;
+
+        margin: 10px 0;
     }
 
     .roll-information-content {
@@ -51,6 +53,10 @@ const SearchResultNetrunningItemsStyles = styled.div`
 
     .fa-arrow-down {
         font-size: 50px;
+
+        width: 50px;
+
+        margin: auto;
     }
 
     .left-splitting-outcome-arrow {
@@ -72,9 +78,14 @@ const SearchResultNetrunningItemsStyles = styled.div`
     }
 
     .change-search-button {
+        width: fit-content;
+
+        margin: auto;
         padding: 0 7.5px;
 
         font-size: 25px;
+
+        z-index: 1;
     }
 
 
@@ -124,4 +135,4 @@ const SearchResultNetrunningItemsStyles = styled.div`
     }
 `;
 
-export default SearchResultNetrunningItemsStyles;
+export default SearchResultCustomItemStyles;
