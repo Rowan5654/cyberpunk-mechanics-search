@@ -66,335 +66,148 @@ import pickPocketImage from "../images/skills/Pick Pocket.png";
 import seaVechicleTechImage from "../images/skills/Sea Vehicle Tech.png";
 import weaponstechImage from "../images/skills/Weaponstech.png";
 
-export default function GetSearchResultSkillitemID(itemID: number) {
-    if (itemID === 1) {
-        return (
-            <img src={ concentrationImage } alt="concentration" />
-        )
-    }
-    if (itemID === 2) {
-        return (
-            <img src={ concealRevealObjectImage } alt="conceal/reveal object" />
-        )
-    }
-    if (itemID === 3) {
-        return (
-            <img src={ lipReadingImage } alt="lip reading" />
-        )
-    }
-    if (itemID === 4) {
-        return (
-            <img src={ perceptionImage } alt="perception" />
-        )
-    }
-    if (itemID === 5) {
-        return (
-            <img src={ trackingImage } alt="tracking" />
-        )
-    }
-    if (itemID === 6) {
-        return (
-            <img src={ athleticsImage } alt="athletics" />
-        )
-    }
-    if (itemID === 7) {
-        return (
-            <img src={ contortionistImage } alt="contortionist" />
-        )
-    }
-    if (itemID === 8) {
-        return (
-            <img src={ danceImage } alt="dance" />
-        )
-    }
-    if (itemID === 9) {
-        return (
-            <img src={ enduranceImage } alt="endurance" />
-        )
-    }
-    if (itemID === 10) {
-        return (
-            <img src={ resistTortureDrugsImage } alt="resist torture/drugs" />
-        )
-    }
-    if (itemID === 11) {
-        return (
-            <img src={ stealthImage } alt="stealth" />
-        )
-    }
-    if (itemID === 12) {
-        return (
-            <img src={ driveLandVehiclesImage } alt="drive land vehicle" />
-        )
-    }
-    if (itemID === 13) {
-        return (
-            <img src={ pilotAirVehicleImage } alt="pilot air vehicle" />
-        )
-    }
-    if (itemID === 14) {
-        return (
-            <img src={ pilotSeaVehicleImage } alt="pilot sea vehicle" />
-        )
-    }
-    if (itemID === 15) {
-        return (
-            <img src={ ridingImage } alt="riding" />
-        )
-    }
-    if (itemID === 16) {
-        return (
-            <img src={ accountingImage } alt="accounting" />
-        )
-    }
-    if (itemID === 17) {
-        return (
-            <img src={ animalHandlingImage } alt="animal handling" />
-        )
-    }
-    if (itemID === 18) {
-        return (
-            <img src={ bureaucracyImage } alt="bureaucracy" />
-        )
-    }
-    if (itemID === 19) {
-        return (
-            <img src={ businessImage } alt="business" />
-        )
-    }
-    if (itemID === 20) {
-        return (
-            <img src={ compositionImage } alt="composition" />
-        )
-    }
-    if (itemID === 21) {
-        return (
-            <img src={ criminologyImage } alt="criminology" />
-        )
-    }
-    if (itemID === 22) {
-        return (
-            <img src={ cryptographyImage } alt="cryptography" />
-        )
-    }
-    if (itemID === 23) {
-        return (
-            <img src={ deductionImage } alt="deduction" />
-        )
-    }
-    if (itemID === 24) {
-        return (
-            <img src={ eductionImage } alt="education" />
-        )
-    }
-    if (itemID === 25) {
-        return (
-            <img src={ gambleImage } alt="gamble" />
-        )
-    }
-    if (itemID === 26) {
-        return (
-            <img src={ languageImage } alt="language" />
-        )
-    }
-    if (itemID === 27) {
-        return (
-            <img src={ librarySearchImage } alt="library search" />
-        )
-    }
-    if (itemID === 28) {
-        return (
-            <img src={ localExpertImage } alt="local expert" />
-        )
-    }
-    if (itemID === 29) {
-        return (
-            <img src={ scienceImage } alt="science" />
-        )
-    }
-    if (itemID === 30) {
-        return (
-            <img src={ tacticsImage } alt="tactics" />
-        )
-    }
-    if (itemID === 31) {
-        return (
-            <img src={ wildernessSurvivalImage } alt="wilderness survival" />
-        )
-    }
-    if (itemID === 32) {
-        return (
-            <img src={ brawlingImage } alt="brawling" />
-        )
-    }
-    if (itemID === 33) {
-        return (
-            <img src={ evasionImage } alt="evasion" />
-        )
-    }
-    if (itemID === 34) {
-        return (
-            <img src={ martialArtsImage } alt="martial arts" />
-        )
-    }
-    if (itemID === 35) {
-        return (
-            <img src={ meleeWeaponImage } alt="melee weapon" />
-        )
-    }
-    if (itemID === 36) {
-        return (
-            <img src={ actingImage } alt="acting" />
-        )
-    }
-    if (itemID === 37) {
-        return (
-            <img src={ playInstrumentImage } alt="play instrument" />
-        )
-    }
-    if (itemID === 38) {
-        return (
-            <img src={ archeryImage } alt="archery" />
-        )
-    }
-    if (itemID === 39) {
-        return (
-            <img src={ autofireImage } alt="autofire" />
-        )
-    }
-    if (itemID === 40) {
-        return (
-            <img src={ handgunImage } alt="handgun" />
-        )
-    }
-    if (itemID === 41) {
-        return (
-            <img src={ heavyWeaponsImage } alt="heavy weapons" />
-        )
-    }
-    if (itemID === 42) {
-        return (
-            <img src={ shoulderArmsImage } alt="shoulder arms" />
-        )
-    }
-    if (itemID === 43) {
-        return (
-            <img src={ briberyImage } alt="bribery" />
-        )
-    }
-    if (itemID === 44) {
-        return (
-            <img src={ conversationImage } alt="conversation" />
-        )
-    }
-    if (itemID === 45) {
-        return (
-            <img src={ humanPerceptionImage } alt="human perception" />
-        )
-    }
-    if (itemID === 46) {
-        return (
-            <img src={ interrogationImage } alt="interrogation" />
-        )
-    }
-    if (itemID === 47) {
-        return (
-            <img src={ persuasionImage } alt="persuasion" />
-        )
-    }
-    if (itemID === 48) {
-        return (
-            <img src={ personalGroomingImage } alt="personal grooming" />
-        )
-    }
-    if (itemID === 49) {
-        return (
-            <img src={ streetwiseImage } alt="streetwise" />
-        )
-    }
-    if (itemID === 50) {
-        return (
-            <img src={ tradingImage } alt="trading" />
-        )
-    }
-    if (itemID === 51) {
-        return (
-            <img src={ wardrobeAndStyleImage } alt="wardrobe and style" />
-        )
-    }
-    if (itemID === 52) {
-        return (
-            <img src={ airVehicleTechImage } alt="air vehicle" />
-        )
-    }
-    if (itemID === 53) {
-        return (
-            <img src={ basicTechImage } alt="basic tech" />
-        )
-    }
-    if (itemID === 54) {
-        return (
-            <img src={ cybertechImage } alt="cybertech" />
-        )
-    }
-    if (itemID === 55) {
-        return (
-            <img src={ demolitionsImage } alt="demolitions" />
-        )
-    }
-    if (itemID === 56) {
-        return (
-            <img src={ electronicsSecurityTechImage } alt="electronics security tech" />
-        )
-    }
-    if (itemID === 57) {
-        return (
-            <img src={ firstAidImage } alt="first aid" />
-        )
-    }
-    if (itemID === 58) {
-        return (
-            <img src={ forgeryImage } alt="forgery" />
-        )
-    }
-    if (itemID === 59) {
-        return (
-            <img src={ landVehicleTechImage } alt="land vehicle tech" />
-        )
-    }
-    if (itemID === 60) {
-        return (
-            <img src={ paintDrawSculptImage } alt="paint/draw/sculpt" />
-        )
-    }
-    if (itemID === 61) {
-        return (
-            <img src={ paramedicImage } alt="paramedic" />
-        )
-    }
-    if (itemID === 62) {
-        return (
-            <img src={ photographyFilmImage } alt="photography/film" />
-        )
-    }
-    if (itemID === 63) {
-        return (
-            <img src={ pickLockImage } alt="pick lock" />
-        )
-    }
-    if (itemID === 64) {
-        return (
-            <img src={ pickPocketImage } alt="pick pocket" />
-        )
-    }
-    if (itemID === 65) {
-        return (
-            <img src={ seaVechicleTechImage } alt="sea vehicle" />
-        )
-    }
-    if (itemID === 66) {
-        return (
-            <img src={ weaponstechImage } alt="weapons tech" />
-        )
-    }
+type SearchResultSkillitemParams = {
+    itemID: number
+}
+
+export default function SearchResultSkillitem(props: SearchResultSkillitemParams) {
+    return (
+        <>
+            { props.itemID === 1 ?
+                <img src={ concentrationImage } alt="concentration" />
+            : props.itemID === 2 ? 
+                <img src={ concealRevealObjectImage } alt="conceal/reveal object" />
+            : props.itemID === 3 ? 
+                <img src={ lipReadingImage } alt="lip reading" />
+            : props.itemID === 4 ? 
+                <img src={ perceptionImage } alt="perception" />
+            : props.itemID === 5 ? 
+                <img src={ trackingImage } alt="tracking" />
+            : props.itemID === 6 ? 
+                <img src={ athleticsImage } alt="athletics" />
+            : props.itemID === 7 ? 
+                <img src={ contortionistImage } alt="contortionist" />
+            : props.itemID === 8 ? 
+                <img src={ danceImage } alt="dance" />
+            : props.itemID === 9 ? 
+                <img src={ enduranceImage } alt="endurance" />
+            : props.itemID === 10 ? 
+                <img src={ resistTortureDrugsImage } alt="resist torture/drugs" />
+            : props.itemID === 11 ? 
+                <img src={ stealthImage } alt="stealth" />
+            : props.itemID === 12 ? 
+                <img src={ driveLandVehiclesImage } alt="drive land vehicle" />
+            : props.itemID === 13 ? 
+                <img src={ pilotAirVehicleImage } alt="pilot air vehicle" />
+            : props.itemID === 14 ? 
+                <img src={ pilotSeaVehicleImage } alt="pilot sea vehicle" />
+            : props.itemID === 15 ? 
+                <img src={ ridingImage } alt="riding" />
+            : props.itemID === 16 ? 
+                <img src={ accountingImage } alt="accounting" />
+            : props.itemID === 17 ? 
+                <img src={ animalHandlingImage } alt="animal handling" />
+            : props.itemID === 18 ? 
+                <img src={ bureaucracyImage } alt="bureaucracy" />
+            : props.itemID === 19 ? 
+                <img src={ businessImage } alt="business" />
+            : props.itemID === 20 ? 
+                <img src={ compositionImage } alt="composition" />
+            : props.itemID === 21 ? 
+                <img src={ criminologyImage } alt="criminology" />
+            : props.itemID === 22 ? 
+                <img src={ cryptographyImage } alt="cryptography" />
+            : props.itemID === 23 ? 
+                <img src={ deductionImage } alt="deduction" />
+            : props.itemID === 24 ? 
+                <img src={ eductionImage } alt="education" />
+            : props.itemID === 25 ? 
+                <img src={ gambleImage } alt="gamble" />
+            : props.itemID === 26 ? 
+                <img src={ languageImage } alt="language" />
+            : props.itemID === 27 ? 
+                <img src={ librarySearchImage } alt="library search" />
+            : props.itemID === 28 ? 
+                <img src={ localExpertImage } alt="local expert" />
+            : props.itemID === 29 ? 
+                <img src={ scienceImage } alt="science" />
+            : props.itemID === 30 ? 
+                <img src={ tacticsImage } alt="tactics" />
+            : props.itemID === 31 ? 
+                <img src={ wildernessSurvivalImage } alt="Wilderness Survival" />
+            : props.itemID === 32 ? 
+                <img src={ brawlingImage } alt="brawling" />
+            : props.itemID === 33 ? 
+                <img src={ evasionImage } alt="evasion" />
+            : props.itemID === 34 ? 
+                <img src={ martialArtsImage } alt="martial arts" />
+            : props.itemID === 35 ? 
+                <img src={ meleeWeaponImage } alt="melee weapon" />
+            : props.itemID === 36 ? 
+                <img src={ actingImage } alt="acting" />
+            : props.itemID === 37 ? 
+                <img src={ playInstrumentImage } alt="play instrument" />
+            : props.itemID === 38 ? 
+                <img src={ archeryImage } alt="archery" />
+            : props.itemID === 39 ? 
+                <img src={ autofireImage } alt="autofire" />
+            : props.itemID === 40 ? 
+                <img src={ handgunImage } alt="handgun" />
+            : props.itemID === 41 ? 
+                <img src={ heavyWeaponsImage } alt="heavy weapons" />
+            : props.itemID === 42 ? 
+                <img src={ shoulderArmsImage } alt="shoulder arms" />
+            : props.itemID === 43 ? 
+                <img src={ briberyImage } alt="bribery" />
+            : props.itemID === 44 ? 
+                <img src={ conversationImage } alt="conversation" />
+            : props.itemID === 45 ? 
+                <img src={ humanPerceptionImage } alt="human perception" />
+            : props.itemID === 46 ? 
+                <img src={ interrogationImage } alt="interrogation" />
+            : props.itemID === 47 ? 
+                <img src={ persuasionImage } alt="persuasion" />
+            : props.itemID === 48 ? 
+                <img src={ personalGroomingImage } alt="personal grooming" />
+            : props.itemID === 49 ? 
+                <img src={ streetwiseImage } alt="streetwise" />
+            : props.itemID === 50 ? 
+                <img src={ tradingImage } alt="trading" />
+            : props.itemID === 51 ? 
+                <img src={ wardrobeAndStyleImage } alt="wardrobe and style" />
+            : props.itemID === 52 ? 
+                <img src={ airVehicleTechImage } alt="air vehicle" />
+            : props.itemID === 53 ? 
+                <img src={ basicTechImage } alt="basic tech" />
+            : props.itemID === 54 ? 
+                <img src={ cybertechImage } alt="cybertech" />
+            : props.itemID === 55 ? 
+                <img src={ demolitionsImage } alt="demolitions" />
+            : props.itemID === 56 ? 
+                <img src={ electronicsSecurityTechImage } alt="electronics security tech" />
+            : props.itemID === 57 ? 
+                <img src={ firstAidImage } alt="first aid" />
+            : props.itemID === 58 ? 
+                <img src={ forgeryImage } alt="forgery" />
+            : props.itemID === 59 ? 
+                <img src={ landVehicleTechImage } alt="land vehicle tech" />
+            : props.itemID === 60 ? 
+                <img src={ paintDrawSculptImage } alt="paint/draw/sculpt" />
+            : props.itemID === 61 ? 
+                <img src={ paramedicImage } alt="paramedic" />
+            : props.itemID === 62 ? 
+                <img src={ photographyFilmImage } alt="photography/film" />
+            : props.itemID === 63 ? 
+                <img src={ pickLockImage } alt="pick lock" />
+            : props.itemID === 64 ? 
+                <img src={ pickPocketImage } alt="pick pocket" />
+            : props.itemID === 65 ? 
+                <img src={ seaVechicleTechImage } alt="sea vehicle" />
+            : props.itemID === 66 ? 
+                <img src={ weaponstechImage } alt="weapons tech" />
+            : 
+                <p style={{ color: "white" }}>No Skill Item Found</p>
+            } 
+        </>
+    );
 }

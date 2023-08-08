@@ -1,14 +1,13 @@
 import React from "react";
 // CSS
 import SearchResultsStyles from "../css/search-results.styles";
-// Functions
-import GetSearchResultSkillItem from "../typescript/search-result-skill-items";
-import GetSearchResultNetrunningItem from "../typescript/search-result-netrunning-items";
-import GetSearchResultCombatItem from "../typescript/search-result-combat-items";
+// Components 
+import SearchResultSkillItem from "../typescript/search-result-skill-items";
+import SearchResultNetrunningItem from "../typescript/search-result-netrunning-items";
+import SearchResultCombatItem from "../typescript/search-result-combat-items";
 
-type SearchResultItem = {
-    itemID: number,
-    content: JSX.Element | undefined
+type SearchResultsParams = {
+    search: string
 }
 
 type SearchItem = {
@@ -16,60 +15,46 @@ type SearchItem = {
     searchPhrase: string
 }
 
-type SearchResultsParams = {
-    search: string,
-    updateSearch: (newSearch: string) => void
-}
-
 export default function SearchResults(props: SearchResultsParams) {
-    const [searchResults, setSearchResults] = React.useState<SearchResultItem[]>(GenerateSearchResults("", props.updateSearch));
+    const [searchResults, setSearchResults] = React.useState<number[]>(GenerateSearchResults(""));
 
     React.useEffect(() => {
-        console.log("here");
-        setSearchResults(GenerateSearchResults(props.search, props.updateSearch));
+        setSearchResults(GenerateSearchResults(props.search));
     }, [props.search])
 
     return (
-        <SearchResultsStyles>
-            { searchResults.map((searchResultsItem, index) => 
-                <div className="search-result-container" key={ index }>
-                    { searchResultsItem.content }
-                </div>
-            )}
-        </SearchResultsStyles>
-    )
+        <>
+            { searchResults.map((searchResultsItem, index) => {
+                return (
+                    <SearchResultsStyles key={ index }>
+                        <div className="search-result-container">
+                            {   
+                                IsSearchItemInList(GetSkillsSearchItems(), searchResultsItem) ? 
+                                    <SearchResultSkillItem itemID={ searchResultsItem } />
+                                : IsSearchItemInList(GetNetrunningSearchItems(), searchResultsItem) ?
+                                    <SearchResultNetrunningItem itemID={ searchResultsItem } />
+                                : IsSearchItemInList(GetCombatSearchItems(), searchResultsItem) ?
+                                    <SearchResultCombatItem itemID={ searchResultsItem } />
+                                : ""
+                            }
+                        </div>
+                    </SearchResultsStyles>
+                )
+            })}
+        </>
+    );
 }
 
-function GenerateSearchResults(userSearch: string, updateSearch: (newSearch: string) => void): SearchResultItem[] {
+function GenerateSearchResults(userSearch: string) {
     const searchItems: SearchItem[] = GetAllSearchItems();
-    const searchResults: SearchResultItem[] = [];
-
-
-
-    //Used for testing
-    // userSearch = "Ranged Combat";
-
-
+    const searchResults: number[] = [];
 
     for (let x: number = 0; x < searchItems.length; x++) {
+        // If the userSearch is either nothing or is part of the search item's search phrase.
         if (userSearch === "" || searchItems[x].searchPhrase.toLowerCase().includes(userSearch.toLowerCase())) {
-            let content: JSX.Element | undefined;
-
-            if (IsSearchItemInList(GetSkillsSearchItems(), searchItems[x])) {
-                content = GetSearchResultSkillItem(searchItems[x].itemID);
-            }
-            if (IsSearchItemInList(GetNetrunningSearchItems(), searchItems[x])) {
-                content = GetSearchResultNetrunningItem(searchItems[x].itemID, updateSearch);
-            }
-            if (IsSearchItemInList(GetCombatSearchItems(), searchItems[x])) {
-                content = GetSearchResultCombatItem(searchItems[x].itemID, updateSearch);
-            }
-            
-            if (!IsSearchItemInResults(searchResults, searchItems[x].itemID)) {
-                searchResults.push({
-                    itemID: searchItems[x].itemID,
-                    content: content
-                });
+            // Checks if the item hasn't already been added to the list of search results.
+            if (!searchResults.includes(searchItems[x].itemID)) {
+                searchResults.push(searchItems[x].itemID);
             }
         }
     }
@@ -77,23 +62,13 @@ function GenerateSearchResults(userSearch: string, updateSearch: (newSearch: str
     return searchResults;
 }
 
-function IsSearchItemInList(list: SearchItem[], item: SearchItem): boolean {
+function IsSearchItemInList(list: SearchItem[], item: number): boolean {
     for (let x = 0; x < list.length; x++) {
-        if (list[x].searchPhrase === item.searchPhrase) {
+        if (list[x].itemID === item) {
             return true;
         }
     }
     
-    return false;
-}
-
-function IsSearchItemInResults(list: SearchResultItem[], ID: number) {
-    for (let x = 0; x < list.length; x++) {
-        if (list[x].itemID === ID) {
-            return true;
-        }
-    }
-
     return false;
 }
 

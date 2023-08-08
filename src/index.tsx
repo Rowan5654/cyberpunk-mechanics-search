@@ -5,6 +5,8 @@ import GlobalStyle from "./css/index.styles";
 // Components
 import SearchResults from './components/search-results';
 
+export const SearchContext = React.createContext((newSearch: string) => { });
+
 function App() {
     const [search, setSearch] = React.useState("");
 
@@ -16,14 +18,16 @@ function App() {
     }
 
     return (
-        <div className="root-div">
-            <GlobalStyle />
-            <div className="title-section">
-                <h1>Search Functionality App</h1>
+        <SearchContext.Provider value={ UpdateSearch }>
+            <div className="root-div">
+                <GlobalStyle />
+                <div className="title-section">
+                    <h1>Search Functionality App</h1>
+                </div>
+                <input className="search-input" id="search-input" type="text" onChange={ (event) => { setSearch(event.target?.value) } } placeholder='Search keywords. Examples: "Ranged", "Stealth", "Black ICE"' />
+                <SearchResults search={ search } />
             </div>
-            <input className="search-input" id="search-input" type="text" onChange={ (event) => { setSearch(event.target?.value) } } placeholder='Search keywords. Examples: "Ranged", "Stealth", "Black ICE"' />
-            <SearchResults search={ search } updateSearch={ UpdateSearch } />
-        </div>
+        </SearchContext.Provider>
     );
 }
 
