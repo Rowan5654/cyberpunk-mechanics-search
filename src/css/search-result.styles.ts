@@ -1,17 +1,10 @@
 import styled from "styled-components";
 
-const SearchResultsStyles = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    align-items: center;
-
+const SearchResultStyles = styled.div`
     .search-result-container {
         max-width: 1200px;
 
         background-color: #DDDDDD;
-        
-        padding: 25px;
 
         border-radius: 25px;
 
@@ -52,7 +45,7 @@ const SearchResultsStyles = styled.div`
     }
 
     .defender {
-        color: #02a3e3;
+        color: #007fad;
     }
 
     .attacker {
@@ -60,4 +53,4 @@ const SearchResultsStyles = styled.div`
     }
 `;
 
-export default SearchResultsStyles;
+export default SearchResultStyles;

@@ -1,80 +1,17 @@
 import styled from "styled-components";
 
 const SearchResultCustomItemStyles = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
+    .search-result-item {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+
+        padding: 25px;
+    }
 
     p, b, li {
         font-size: 25px;
-    }
-
-    .roll-information-container {
-        display: flex;
-        justify-content: space-between;
-
-        margin: 10px 0;
-    }
-
-    .roll-information-content {
-        width: 45%;
-
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-
-        text-align: center;
-    }
-
-    .roll-information-divider {
-        width: 100%;
-
-        border: 1px solid #BBBBBB;
-    }
-
-    .splitting-outcomes-container {
-        width: 100%;
-
-        display: flex;
-        justify-content: space-between;
-        gap: 25px;
-    }
-
-    .splitting-outcome {
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-        
-        text-align: center;
-        
-        width: 100%; 
-    }
-
-    .fa-arrow-down {
-        font-size: 50px;
-
-        width: 50px;
-
-        margin: auto;
-    }
-
-    .left-splitting-outcome-arrow {
-        transform: rotate(45deg);
-    }
-
-    .right-splitting-outcome-arrow {
-        transform: rotate(-45deg);
-    }
-
-    .splitting-outcome-information {
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-    }
-
-    .roll-information-verticle-divider {
-        border: 1px solid #BBBBBB;
     }
 
     .change-search-button {
@@ -87,51 +24,23 @@ const SearchResultCustomItemStyles = styled.div`
 
         z-index: 1;
     }
-
-
-
-    .roll-information-content-dropdown {
+    
+    .information-divider {
         width: 100%;
 
-        display: flex;
-        flex-direction: column;
+        border: 1px solid #BBBBBB;
     }
 
-    .roll-information-content-dropdown-title {
-        display: flex;
-        align-items: center;
-        gap: 10px;
+    .dashed-divider {
+        width: 100%;
 
-        background-color: transparent;
+        margin: 0 auto;
 
-        user-select: none;
-
-        border-redius: 25px;
-
-        padding: 0 10px;
+        border: 1px dashed black;
     }
 
-    .roll-information-content-dropdown-title:hover {
-        background-color: #CCCCCC;
-    }
-
-    .roll-information-content-dropdown-title:active {
-        background-color: #BBBBBB;
-    }
-
-    .fa-caret-up {
-        font-size: 25px;
-
-        transform: rotate(180deg);
-    }
-
-    .roll-information-content-dropdown-content {
-        display: none;
-        flex-direction: column;
-        gap: 25px;
-        
-
-        padding-top: 25px;
+    .centered-text {
+        text-align: center;
     }
 `;
 

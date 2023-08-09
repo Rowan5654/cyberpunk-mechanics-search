@@ -70,9 +70,9 @@ type SearchResultSkillitemParams = {
     itemID: number
 }
 
-export default function SearchResultSkillitem(props: SearchResultSkillitemParams) {
+export default function SearchResultSkillItem(props: SearchResultSkillitemParams) {
     return (
-        <>
+        <div className="search-result-item">
             { props.itemID === 1 ?
                 <img src={ concentrationImage } alt="concentration" />
             : props.itemID === 2 ? 
@@ -208,6 +208,6 @@ export default function SearchResultSkillitem(props: SearchResultSkillitemParams
             : 
                 <p style={{ color: "white" }}>No Skill Item Found</p>
             } 
-        </>
+        </div>
     );
 }

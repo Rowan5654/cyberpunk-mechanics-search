@@ -1,6 +1,10 @@
 import React from "react";
 // CSS
-import SearchResultsStyles from "../css/search-results.styles";
+import SearchResultStyles from "../css/search-result.styles";
+import SearchResultCustomItemStyles from "../css/search-result-custom-item.styles";
+import SearchResultCustomItemDropdownStyles from "../css/search-result-custom-item-dropdown.styles";
+import SearchResultCustomItemRollInformationStyles from "../css/search-results-custom-item-roll-information.styles";
+import SearchResultCustomItemSplittingOutcomesStyles from "../css/search-result-custom-item-splitting-outcomes.styles.";
 // Components 
 import SearchResultSkillItem from "../typescript/search-result-skill-items";
 import SearchResultNetrunningItem from "../typescript/search-result-netrunning-items";
@@ -26,19 +30,28 @@ export default function SearchResults(props: SearchResultsParams) {
         <>
             { searchResults.map((searchResultsItem, index) => {
                 return (
-                    <SearchResultsStyles key={ index }>
+                    <SearchResultStyles key={ index }>
                         <div className="search-result-container">
-                            {   
-                                IsSearchItemInList(GetSkillsSearchItems(), searchResultsItem) ? 
-                                    <SearchResultSkillItem itemID={ searchResultsItem } />
-                                : IsSearchItemInList(GetNetrunningSearchItems(), searchResultsItem) ?
-                                    <SearchResultNetrunningItem itemID={ searchResultsItem } />
-                                : IsSearchItemInList(GetCombatSearchItems(), searchResultsItem) ?
-                                    <SearchResultCombatItem itemID={ searchResultsItem } />
-                                : ""
-                            }
+                            <SearchResultCustomItemStyles>
+                            <SearchResultCustomItemDropdownStyles>
+                            <SearchResultCustomItemRollInformationStyles>
+                            <SearchResultCustomItemSplittingOutcomesStyles>
+                                {   
+                                    IsSearchItemInList(GetSkillsSearchItems(), searchResultsItem) ? 
+                                        <SearchResultSkillItem itemID={ searchResultsItem } />
+                                    : IsSearchItemInList(GetNetrunningSearchItems(), searchResultsItem) ?
+                                        <SearchResultNetrunningItem itemID={ searchResultsItem } />
+                                    : IsSearchItemInList(GetCombatSearchItems(), searchResultsItem) ?
+                                        <SearchResultCombatItem itemID={ searchResultsItem } />
+                                    : ""
+                                }
+                            </SearchResultCustomItemSplittingOutcomesStyles>
+                            </SearchResultCustomItemRollInformationStyles>
+                            </SearchResultCustomItemDropdownStyles>
+                            </SearchResultCustomItemStyles>
+
                         </div>
-                    </SearchResultsStyles>
+                    </SearchResultStyles>
                 )
             })}
         </>
@@ -48,6 +61,9 @@ export default function SearchResults(props: SearchResultsParams) {
 function GenerateSearchResults(userSearch: string) {
     const searchItems: SearchItem[] = GetAllSearchItems();
     const searchResults: number[] = [];
+
+    // Use this for testing
+    // userSearch = "Netrunning Combat";
 
     for (let x: number = 0; x < searchItems.length; x++) {
         // If the userSearch is either nothing or is part of the search item's search phrase.
@@ -82,7 +98,13 @@ function GetAllSearchItems(): SearchItem[] {
 
 function GetCombatSearchItems(): SearchItem[] {
     return [
-        { itemID: 69, searchPhrase: "Ranged Combat" }
+        { itemID: 69, searchPhrase: "Ranged Combat" },
+        { itemID: 70, searchPhrase: "Using Autofire"},
+        { itemID: 71, searchPhrase: "Suppressive Fire" },
+        { itemID: 71, searchPhrase: "Suppression Fire" },
+        { itemID: 72, searchPhrase: "Shotgun Shells" },
+        { itemID: 73, searchPhrase: "Explosives"},
+        { itemID: 74, searchPhrase: "Melee Combat" }
     ]
 }
 
