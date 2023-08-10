@@ -8,7 +8,9 @@ import SearchResultCustomItemSplittingOutcomesStyles from "../css/search-result-
 // Components 
 import SearchResultSkillItem from "../typescript/search-result-skill-items";
 import SearchResultNetrunningItem from "../typescript/search-result-netrunning-items";
-import SearchResultCombatItem from "../typescript/search-result-combat-items";
+import SearchResultRangedCombatItem from "../typescript/search-result-ranged-combat-items";
+import SearchResultsMeleeCombatItem from "../typescript/search-result-melee-combat-items";
+import SearchResultMiscellaneousItem from "../typescript/search-result-miscellaneous-items";
 
 type SearchResultsParams = {
     search: string
@@ -41,8 +43,12 @@ export default function SearchResults(props: SearchResultsParams) {
                                         <SearchResultSkillItem itemID={ searchResultsItem } />
                                     : IsSearchItemInList(GetNetrunningSearchItems(), searchResultsItem) ?
                                         <SearchResultNetrunningItem itemID={ searchResultsItem } />
-                                    : IsSearchItemInList(GetCombatSearchItems(), searchResultsItem) ?
-                                        <SearchResultCombatItem itemID={ searchResultsItem } />
+                                    : IsSearchItemInList(GetRangedCombatSearchItems(), searchResultsItem) ?
+                                        <SearchResultRangedCombatItem itemID={ searchResultsItem } />
+                                    : IsSearchItemInList(GetMeleeCombatSearchItems(), searchResultsItem) ?
+                                        <SearchResultsMeleeCombatItem itemID={ searchResultsItem } />
+                                    : IsSearchItemInList(GetMiscellaneousSearchItems(), searchResultsItem) ?
+                                        <SearchResultMiscellaneousItem itemID={ searchResultsItem } />
                                     : ""
                                 }
                             </SearchResultCustomItemSplittingOutcomesStyles>
@@ -91,12 +97,26 @@ function IsSearchItemInList(list: SearchItem[], item: number): boolean {
 function GetAllSearchItems(): SearchItem[] {
     const skillsSearchItems: SearchItem[] = GetSkillsSearchItems();
     const netrunningSearchItems: SearchItem[] = GetNetrunningSearchItems();
-    const combatSearchItems: SearchItem[] = GetCombatSearchItems();
+    const rangedCombatSearchItems: SearchItem[] = GetRangedCombatSearchItems();
+    const meleeCombatSearchItems: SearchItem[] = GetMeleeCombatSearchItems();
+    const miscellaneousSearchItems: SearchItem[] = GetMiscellaneousSearchItems();
 
-    return skillsSearchItems.concat(netrunningSearchItems, combatSearchItems);
+    return skillsSearchItems.concat(netrunningSearchItems, rangedCombatSearchItems, meleeCombatSearchItems, miscellaneousSearchItems);
 };
 
-function GetCombatSearchItems(): SearchItem[] {
+function GetMiscellaneousSearchItems(): SearchItem[] {
+    return [
+        { itemID: 75, searchPhrase: "Making a Skill Check" }
+    ]
+}
+
+function GetMeleeCombatSearchItems(): SearchItem[] {
+    return [
+        { itemID: 74, searchPhrase: "Melee Combat" },
+    ]
+}
+
+function GetRangedCombatSearchItems(): SearchItem[] {
     return [
         { itemID: 69, searchPhrase: "Ranged Combat" },
         { itemID: 70, searchPhrase: "Using Autofire"},
@@ -104,7 +124,6 @@ function GetCombatSearchItems(): SearchItem[] {
         { itemID: 71, searchPhrase: "Suppression Fire" },
         { itemID: 72, searchPhrase: "Shotgun Shells" },
         { itemID: 73, searchPhrase: "Explosives"},
-        { itemID: 74, searchPhrase: "Melee Combat" }
     ]
 }
 

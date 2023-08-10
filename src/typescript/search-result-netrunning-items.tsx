@@ -177,6 +177,7 @@ export default function SearchResultNetrunningItem(props: SearchResultNetrunning
                         </div>
                     </div>
                     <div className="information-divider"></div>
+                    <p className="centered-text">(The <span className="defender special-text">DEFENDER</span> wins if there is a tie)</p>
                     <p>If the <span className="attacker special-text">ATTACKER</span> is successful, the <span className="defender special-text">DEFENDER</span> suffers the effect of the program used.</p>
                     <ul>
                         <li>If the <span className="defender special-text">DEFENDER</span> is a <span className="netrunner special-text">Netrunner</span>, they will reduce thier HP based on the damage done. </li>
