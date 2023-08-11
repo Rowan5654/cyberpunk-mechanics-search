@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
         font-family: "Anton";
         src: 
             url("https://fonts.gstatic.com/s/play/v17/6aez4K2oVqwIvtU2Hw.woff2") format("woff2"),
-            url("https://fonts.gstatic.com/s/anton/v23/1Ptgg87LROyAm3Kz-C8.woff2") format("woff2");
+            url("https://fonts.gstatic.com/s/anton/v23/1Ptgg87LROyAm3Kz-C8.woff2") format(woff2);
     }
 
     * {

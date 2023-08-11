@@ -10,7 +10,7 @@ const SearchResultCustomItemStyles = styled.div`
         padding: 25px;
     }
 
-    p, b, li {
+    p, b, i, li {
         font-size: 25px;
     }
 
