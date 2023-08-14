@@ -4,7 +4,8 @@ import React from "react";
 import { SearchContext } from "..";
 
 type SearchResultMeleeCombatItemParams = {
-    itemID: number
+    itemID: number,
+    ToggleDropdown: (caret: HTMLElement, dropdownContent: HTMLElement) => void
 }
 
 export default function SeachResultMeleeCombatItems(props: SearchResultMeleeCombatItemParams) {
@@ -69,17 +70,4 @@ export default function SeachResultMeleeCombatItems(props: SearchResultMeleeComb
         </>
 
     )
-}
-
-function ToggleDropdown(caret: HTMLElement, dropdownContent: HTMLElement) {
-    // Show dropdown content
-    if (dropdownContent.style.display === "flex") {
-        dropdownContent.style.display = "none";
-        caret.style.transform = "rotate(180deg)";
-    }
-    // Hide dropdown content
-    else {
-        dropdownContent.style.display = "flex";
-        caret.style.transform = "rotate(0deg)";
-    }
 }

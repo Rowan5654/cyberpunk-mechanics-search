@@ -11,6 +11,7 @@ import SearchResultNetrunningItem from "../typescript/search-result-netrunning-i
 import SearchResultRangedCombatItem from "../typescript/search-result-ranged-combat-items";
 import SearchResultsMeleeCombatItem from "../typescript/search-result-melee-combat-items";
 import SearchResultMiscellaneousItem from "../typescript/search-result-miscellaneous-items";
+import SearchResultHealingAndDamageItem from "../typescript/search-result-healing-and-damage-items";
 
 type SearchResultsParams = {
     search: string
@@ -28,6 +29,19 @@ export default function SearchResults(props: SearchResultsParams) {
         setSearchResults(GenerateSearchResults(props.search));
     }, [props.search])
 
+    const ToggleDropdown = (caret: HTMLElement, dropdownContent: HTMLElement) => {
+        // Show dropdown content
+        if (dropdownContent.style.display === "flex") {
+            dropdownContent.style.display = "none";
+            caret.style.transform = "rotate(180deg)";
+        }
+        // Hide dropdown content
+        else {
+            dropdownContent.style.display = "flex";
+            caret.style.transform = "rotate(0deg)";
+        }
+    }
+
     return (
         <>
             { searchResults.map((searchResultsItem, index) => {
@@ -42,13 +56,15 @@ export default function SearchResults(props: SearchResultsParams) {
                                     IsSearchItemInList(GetSkillsSearchItems(), searchResultsItem) ? 
                                         <SearchResultSkillItem itemID={ searchResultsItem } />
                                     : IsSearchItemInList(GetNetrunningSearchItems(), searchResultsItem) ?
-                                        <SearchResultNetrunningItem itemID={ searchResultsItem } />
+                                        <SearchResultNetrunningItem itemID={ searchResultsItem } ToggleDropdown={ ToggleDropdown } />
                                     : IsSearchItemInList(GetRangedCombatSearchItems(), searchResultsItem) ?
-                                        <SearchResultRangedCombatItem itemID={ searchResultsItem } />
+                                        <SearchResultRangedCombatItem itemID={ searchResultsItem } ToggleDropdown={ ToggleDropdown } />
                                     : IsSearchItemInList(GetMeleeCombatSearchItems(), searchResultsItem) ?
-                                        <SearchResultsMeleeCombatItem itemID={ searchResultsItem } />
+                                        <SearchResultsMeleeCombatItem itemID={ searchResultsItem } ToggleDropdown={ ToggleDropdown } />
                                     : IsSearchItemInList(GetMiscellaneousSearchItems(), searchResultsItem) ?
-                                        <SearchResultMiscellaneousItem itemID={ searchResultsItem } />
+                                        <SearchResultMiscellaneousItem itemID={ searchResultsItem } ToggleDropdown={ ToggleDropdown } />
+                                    : IsSearchItemInList(GetHealingAndDamageItems(), searchResultsItem) ?
+                                        <SearchResultHealingAndDamageItem itemID={ searchResultsItem } ToggleDropdown={ ToggleDropdown } />
                                     : ""
                                 }
                             </SearchResultCustomItemSplittingOutcomesStyles>
@@ -69,7 +85,7 @@ function GenerateSearchResults(userSearch: string) {
     const searchResults: number[] = [];
 
     // Use this for testing
-    // userSearch = "Netrunning Combat";
+    // userSearch = "Aimed Shot";
 
     for (let x: number = 0; x < searchItems.length; x++) {
         // If the userSearch is either nothing or is part of the search item's search phrase.
@@ -100,13 +116,27 @@ function GetAllSearchItems(): SearchItem[] {
     const rangedCombatSearchItems: SearchItem[] = GetRangedCombatSearchItems();
     const meleeCombatSearchItems: SearchItem[] = GetMeleeCombatSearchItems();
     const miscellaneousSearchItems: SearchItem[] = GetMiscellaneousSearchItems();
+    const healingAndDamageItems: SearchItem[] = GetHealingAndDamageItems();
 
-    return skillsSearchItems.concat(netrunningSearchItems, rangedCombatSearchItems, meleeCombatSearchItems, miscellaneousSearchItems);
+    return skillsSearchItems.concat(
+        netrunningSearchItems, 
+        rangedCombatSearchItems, 
+        meleeCombatSearchItems, 
+        miscellaneousSearchItems,
+        healingAndDamageItems
+    );
 };
+
+function GetHealingAndDamageItems(): SearchItem[] {
+    return [
+        { itemID: 77, searchPhrase: "Critical Injuries" }
+    ]
+}
 
 function GetMiscellaneousSearchItems(): SearchItem[] {
     return [
-        { itemID: 75, searchPhrase: "Making a Skill Check" }
+        { itemID: 75, searchPhrase: "Making a Skill Check" },
+        { itemID: 75, searchPhrase: "Using Luck" },
     ]
 }
 
@@ -124,6 +154,7 @@ function GetRangedCombatSearchItems(): SearchItem[] {
         { itemID: 71, searchPhrase: "Suppression Fire" },
         { itemID: 72, searchPhrase: "Shotgun Shells" },
         { itemID: 73, searchPhrase: "Explosives"},
+        { itemID: 76, searchPhrase: "Aimed Shots" }
     ]
 }
 
@@ -132,6 +163,9 @@ function GetNetrunningSearchItems(): SearchItem[] {
         { itemID: 67, searchPhrase: "Encountering Black ICE" },
         { itemID: 68, searchPhrase: "Netrunning Combat" },
         { itemID: 68, searchPhrase: "NET Combat" },
+        { itemID: 78, searchPhrase: "Jacking In" },
+        { itemID: 78, searchPhrase: "Jacking Out" },
+        { itemID: 79, searchPhrase: "NET Actions vs Meat Actions" }
     ];
 }
 
@@ -205,3 +239,4 @@ function GetSkillsSearchItems(): SearchItem[] {
         { itemID: 66, searchPhrase: "Weaponstech" }
     ];
 }
+

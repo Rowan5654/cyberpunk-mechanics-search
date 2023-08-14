@@ -1,11 +1,15 @@
 import React from "react";
-// CSS
-import SearchResultCustomItemStyles from "../css/search-result-custom-item.styles"
+
+// Images
+import jackingInAndOut from "../images/Net Actions/JackingInAndOut.png";
+import numberOfNetrunningActionsAllowed from "../images/Net Actions/NumberOfNetrunningActionsAllowed.png";
+
 // Context
 import { SearchContext } from "..";
 
 type SearchResultNetrunningItemParams = {
-    itemID: number
+    itemID: number,
+    ToggleDropdown: (caret: HTMLElement, dropdownContent: HTMLElement) => void
 }
 
 export default function SearchResultNetrunningItem(props: SearchResultNetrunningItemParams) {
@@ -76,7 +80,7 @@ export default function SearchResultNetrunningItem(props: SearchResultNetrunning
                 <div className="search-result-item">
                     <b>NET Combat</b>
                     <div className="content-dropdown">
-                        <div className="content-dropdown-title" onClick={ () => { ToggleDropdown(document.getElementById("net-combat-dropdown-1-caret")!, document.getElementById("net-combat-dropdown-1")!) } }>
+                        <div className="content-dropdown-title" onClick={ () => { props.ToggleDropdown(document.getElementById("net-combat-dropdown-1-caret")!, document.getElementById("net-combat-dropdown-1")!) } }>
                             <p>If a <span className="netrunner special-text">Netrunner</span> is attacking a <span className="black-ice special-text">Black ICE</span>:</p>
                             <i className="fa-solid fa-caret-up" id="net-combat-dropdown-1-caret"></i>
                         </div>
@@ -112,7 +116,7 @@ export default function SearchResultNetrunningItem(props: SearchResultNetrunning
                     </div>
                     <div className="information-divider"></div>
                     <div className="content-dropdown"> 
-                        <div className="content-dropdown-title" onClick={ () => { ToggleDropdown(document.getElementById("net-combat-dropdown-2-caret")!, document.getElementById("net-combat-dropdown-2")!) } }>
+                        <div className="content-dropdown-title" onClick={ () => { props.ToggleDropdown(document.getElementById("net-combat-dropdown-2-caret")!, document.getElementById("net-combat-dropdown-2")!) } }>
                             <p>If an <span className="black-ice special-text">Anti-Personnel Black ICE</span> is attacking a <span className="netrunner special-text">Netrunner</span>:</p>
                             <i className="fa-solid fa-caret-up" id="net-combat-dropdown-2-caret"></i>
                         </div>
@@ -145,7 +149,7 @@ export default function SearchResultNetrunningItem(props: SearchResultNetrunning
                     </div>
                     <div className="information-divider"></div>
                     <div className="content-dropdown">
-                        <div className="content-dropdown-title" onClick={ () => { ToggleDropdown(document.getElementById("net-combat-dropdown-3-caret")!, document.getElementById("net-combat-dropdown-3")!) } }>
+                        <div className="content-dropdown-title" onClick={ () => { props.ToggleDropdown(document.getElementById("net-combat-dropdown-3-caret")!, document.getElementById("net-combat-dropdown-3")!) } }>
                             <p>If an <span className="black-ice special-text">Anti-Program Black ICE</span> is attacking a <span className="netrunner special-text">Netrunner</span>'s program:</p>
                             <i className="fa-solid fa-caret-up" id="net-combat-dropdown-3-caret"></i>
                         </div>
@@ -187,24 +191,36 @@ export default function SearchResultNetrunningItem(props: SearchResultNetrunning
                 </div>
 
 
-            :
+            : props.itemID === 78 ?
 
 
-                <p style={{ color: "white" }}>No Netrunning Item Found</p>
+// Jacking In and Out 
+                <div className="search-result-item">
+                    <img src={ jackingInAndOut } alt="jacking in and out" />
+                </div>
+
+
+            : props.itemID === 79 ?
+
+
+// Net Actions vs Meat Actions
+                <div className="search-result-item">
+                    <b>NET Actions vs Meat Actions</b>
+                    <p>When a <span className="netrunner special-text">Netrunner</span> is <button className="change-search-button" onClick={ () => { UpdateSearch("Jacking In") }}>Jacked In</button> to a network, they have two kinds of Actions they can make:</p>
+                    <p style={{ textAlign: "center" }}><b>Meat Actions</b> are non Move Actions that take place in reality, or Meatspace (Ranged Attack, Conceal/Reveal object, Reload, etc).</p>
+                    <p style={{ textAlign: "center" }}><b>NET Actions</b> are Actions that take place within a NET Architecture (Activate Program, Scan Architecture, Unlock Password, etc).</p>
+                    <div className="dashed-divider"></div>
+                    <p>During a <span className="netrunner special-text">Netrunner</span>'s turn, they have the following options:</p>
+                    <p>They can take as many NET actions as thier interface (Role Ability) allows.</p>
+                    <img src={ numberOfNetrunningActionsAllowed } style={{ width: "600px", objectFit: "contain" }} />
+                    <p className="vs">OR</p>
+                    <p>They can take a single Meat Action</p>
+                    <div className="dashed-divider"></div>
+                    <p>In both cases, the <span className="netrunner special-text">Netrunner</span> still get's to take their Move Action.</p>
+                </div>
+
+            : ""
             }
         </>
     );
-}
-
-function ToggleDropdown(caret: HTMLElement, dropdownContent: HTMLElement) {
-    // Show dropdown content
-    if (dropdownContent.style.display === "flex") {
-        dropdownContent.style.display = "none";
-        caret.style.transform = "rotate(180deg)";
-    }
-    // Hide dropdown content
-    else {
-        dropdownContent.style.display = "flex";
-        caret.style.transform = "rotate(0deg)";
-    }
 }

@@ -1,4 +1,18 @@
 export default function CodeSnippets() {
+    const ToggleDropdown = (caret: HTMLElement, dropdownContent: HTMLElement) => {
+        // Show dropdown content
+        if (dropdownContent.style.display === "flex") {
+            dropdownContent.style.display = "none";
+            caret.style.transform = "rotate(180deg)";
+        }
+        // Hide dropdown content
+        else {
+            dropdownContent.style.display = "flex";
+            caret.style.transform = "rotate(0deg)";
+        }
+    }
+    
+    
     return (
         <>
 {/* Dropdowns */}
@@ -69,18 +83,4 @@ export default function CodeSnippets() {
             </div>
         </>
     );
-}
-
-
-function ToggleDropdown(caret: HTMLElement, dropdownContent: HTMLElement) {
-    // Show dropdown content
-    if (dropdownContent.style.display === "flex") {
-        dropdownContent.style.display = "none";
-        caret.style.transform = "rotate(180deg)";
-    }
-    // Hide dropdown content
-    else {
-        dropdownContent.style.display = "flex";
-        caret.style.transform = "rotate(0deg)";
-    }
 }
