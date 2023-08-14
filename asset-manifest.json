@@ -1,7 +1,10 @@
 {
   "files": {
-    "main.js": "/cyberpunk-mechanics-search/static/js/main.c86414fe.js",
+    "main.js": "/cyberpunk-mechanics-search/static/js/main.063a49f1.js",
+    "static/media/Body Critical Injuries.png": "/cyberpunk-mechanics-search/static/media/Body Critical Injuries.4e1bff981324a660bdb4.png",
+    "static/media/Head Critical Injuries.png": "/cyberpunk-mechanics-search/static/media/Head Critical Injuries.0dcfdbc3f6fd17754164.png",
     "static/media/Criminology.png": "/cyberpunk-mechanics-search/static/media/Criminology.4d5ff5541ae9246903e5.png",
+    "static/media/JackingInAndOut.png": "/cyberpunk-mechanics-search/static/media/JackingInAndOut.3b10d302c53d5b718ece.png",
     "static/media/Electronics-Security Tech.png": "/cyberpunk-mechanics-search/static/media/Electronics-Security Tech.acdacf0cb3c9d956d337.png",
     "static/media/Endurance.png": "/cyberpunk-mechanics-search/static/media/Endurance.7b5b149f4618e5b8eac4.png",
     "static/media/Weaponstech.png": "/cyberpunk-mechanics-search/static/media/Weaponstech.2658ede737294ec793fe.png",
@@ -12,6 +15,7 @@
     "static/media/Bureaucracy.png": "/cyberpunk-mechanics-search/static/media/Bureaucracy.fb3221a2e4031e347ea3.png",
     "static/media/Science.png": "/cyberpunk-mechanics-search/static/media/Science.a7b4de8f1cb0bde3b487.png",
     "static/media/Business.png": "/cyberpunk-mechanics-search/static/media/Business.383e7778b9b48f2233a2.png",
+    "static/media/Skill Check vs Task Difficulty Table.png": "/cyberpunk-mechanics-search/static/media/Skill Check vs Task Difficulty Table.67747040dbda47a09649.png",
     "static/media/Cybertech.png": "/cyberpunk-mechanics-search/static/media/Cybertech.15d38967c751974422ae.png",
     "static/media/Acting.png": "/cyberpunk-mechanics-search/static/media/Acting.df9a30a9fa3f6cb27adb.png",
     "static/media/Bribery.png": "/cyberpunk-mechanics-search/static/media/Bribery.94ed424b26b9c3dca174.png",
@@ -68,11 +72,12 @@
     "static/media/Composition.png": "/cyberpunk-mechanics-search/static/media/Composition.185cd3f97e66cddf7459.png",
     "static/media/Tracking.png": "/cyberpunk-mechanics-search/static/media/Tracking.54468a10a48e69aac344.png",
     "static/media/Photography-Film.png": "/cyberpunk-mechanics-search/static/media/Photography-Film.a5eec042c546da08746a.png",
+    "static/media/Aimed Shot.png": "/cyberpunk-mechanics-search/static/media/Aimed Shot.ecf09653c8e41b079077.png",
     "static/media/Autofire Range DV Table.png": "/cyberpunk-mechanics-search/static/media/Autofire Range DV Table.25dec2f3b334a724db6f.png",
     "index.html": "/cyberpunk-mechanics-search/index.html",
-    "main.c86414fe.js.map": "/cyberpunk-mechanics-search/static/js/main.c86414fe.js.map"
+    "main.063a49f1.js.map": "/cyberpunk-mechanics-search/static/js/main.063a49f1.js.map"
   },
   "entrypoints": [
-    "static/js/main.c86414fe.js"
+    "static/js/main.063a49f1.js"
   ]
 }
