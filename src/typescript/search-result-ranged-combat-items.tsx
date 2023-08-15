@@ -163,6 +163,7 @@ export default function SearchResultRangedCombatItem(props: SearchResultRangedCo
             <div className="search-result-item" style={{ width: "1200px" }}>
                 <b>Using Autofire</b>
                 <p>In order to use autofire, the <span className="attacker special-text">ATTACKER</span> must have 10 bullets in their weapon's magazine.</p>
+                <p>Autofire can't be used to make an <button className="change-search-button" onClick={ () => { UpdateSearch("Aimed Shot") }}>aimed shot</button></p>
                 <div className="content-dropdown">
                     <div className="content-dropdown-title" onClick={ () => { props.ToggleDropdown(document.getElementById("autofire-dropdown-1-caret")!, document.getElementById("autofire-dropdown-1")!) } }>
                         <p>Compulsory if the <span className="defender special-text">DEFENDER</span> has a REF lower than 8 (0 - 7)</p>
@@ -574,7 +575,7 @@ export default function SearchResultRangedCombatItem(props: SearchResultRangedCo
                 <b>Aimed Shots</b>
                 <p>Taking an aimed shot reduces the <span className="attacker special-text">ATTACKER</span>'s rate of fire for their turn to 1.</p>
                 <p>The <span className="attacker special-text">ATTACKER</span> must specify where on the <span className="defender special-text">DEFENDER</span>'s body they are targeting <b>before</b> they roll.</p>
-                <p>Note: <button className="change-search-button" onClick={ () => { UpdateSearch("Shotgun Shells") }}>Shotgun Shells</button> can't be used to make an aimed shot.</p>
+                <p>Note: <button className="change-search-button" onClick={ () => { UpdateSearch("Autofire") }}>Autofire</button> and <button className="change-search-button" onClick={ () => { UpdateSearch("Shotgun Shells") }}>Shotgun Shells</button> can't be used to make an aimed shot.</p>
                 <div className="content-dropdown">
                     <div className="content-dropdown-title" onClick={ () => { props.ToggleDropdown(document.getElementById("aimed-shot-dropdown-1-caret")!, document.getElementById("aimed-shot-dropdown-1")!) } }>
                         <p>Compulsory if the <span className="defender special-text">DEFENDER</span> has a REF lower than 8 (0 - 7)</p>
@@ -696,26 +697,6 @@ export default function SearchResultRangedCombatItem(props: SearchResultRangedCo
 
 
             : "" }
-
-{/* // Taking Damage
-// THIS CODE IS FOR DETERMINING AUTOFIRE DAMAGE
-            <div className="roll-information-content" style={{ width: "100%" }}>
-                <p>The <span className="attacker special-text">ATTACKER</span> makes the following roll to determine the damage done to the <span className="defender special-text">DEFENDER</span>:</p>
-                <div className="information-divider"></div>
-                <div>
-                    <p><i className="fa-solid fa-dice-d20 dice-roll-icon"></i> 2 D6</p>
-                    <p>*</p>
-                    <p>The <b style={{ color: "#03ab70" }}>amount that beat the check</b>, up to the maximum allowed by the weapons's Autofire (SMG = 3, Assault Rifle = 4).</p>
-                    <br></br>
-                    <p><b>Example:</b> If 17 was the DV and the <span className="attacker special-text">ATTACKER</span> rolled 20, the <b style={{ color: "#03ab70" }}>amount that beat the check</b> would be 3 (20 - 17 = 3).</p>
-                </div>
-            </div>
-// THIS CODE IS FOR DETERMINING SHOTGUN SHELL DAMAGE
-<p>The <span className="defender special-text">DEFENDER</span> takes <i className="fa-solid fa-dice-d20 dice-roll-icon"></i> 3 D6 damage.</p>
-
-// THIS CODE IS FOR DETERMINING MELEE WEAPON DAMAGE
-armor is ignored by half when using melee weapons.
-                 */}
         </>
     );
 }

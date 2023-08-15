@@ -42,6 +42,17 @@ const SearchResultCustomItemStyles = styled.div`
     .centered-text {
         text-align: center;
     }
+
+    .centered-content {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+
+        margin: auto;
+    }
 `;
 
 export default SearchResultCustomItemStyles;

@@ -129,7 +129,8 @@ function GetAllSearchItems(): SearchItem[] {
 
 function GetHealingAndDamageItems(): SearchItem[] {
     return [
-        { itemID: 77, searchPhrase: "Critical Injuries" }
+        { itemID: 77, searchPhrase: "Critical Injuries" },
+        { itemID: 77, searchPhrase: "Critical Injury" }
     ]
 }
 
@@ -137,6 +138,8 @@ function GetMiscellaneousSearchItems(): SearchItem[] {
     return [
         { itemID: 75, searchPhrase: "Making a Skill Check" },
         { itemID: 75, searchPhrase: "Using Luck" },
+        { itemID: 80, searchPhrase: "Taking Damage" },
+        { itemID: 80, searchPhrase: "Receiving Damage" }
     ]
 }
 
